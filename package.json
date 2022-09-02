@@ -1,0 +1,35 @@
+{
+	"name": "shang-cli",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"bin": {
+		"shang-cli": "index.js",
+		"sc": "index.js"
+	},
+	"registry": "https://registry.npmjs.org/",
+	"repository": {
+		"type": "git",
+		"url": "git@git.haier.net:syn_ydh5/syn_h5/syn_myhome_h5.git",
+		"branch": "release_3.2.0",
+		"directory": "packages/*"
+	},
+	"keywords": [],
+	"author": "shang",
+	"license": "ISC",
+	"homepage": "",
+	"dependencies": {
+		"chalk": "^5.0.1",
+		"commander": "^9.1.0",
+		"download-git-repo": "^3.0.2",
+		"fs-extra": "^10.1.0",
+		"inquirer": "^9.1.1",
+		"log-symbols": "^5.1.0",
+		"ora": "^6.1.2",
+		"shelljs": "^0.8.5"
+	}
+}
