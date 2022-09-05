@@ -1,7 +1,7 @@
 {
 	"name": "shang-cli",
-	"version": "1.0.0",
-	"description": "",
+	"version": "0.1.1",
+	"description": "个人脚手架",
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
@@ -12,16 +12,24 @@
 		"sc": "index.js"
 	},
 	"registry": "https://registry.npmjs.org/",
-	"repository": {
-		"type": "git",
-		"url": "git@git.haier.net:syn_ydh5/syn_h5/syn_myhome_h5.git",
-		"branch": "release_3.2.0",
-		"directory": "packages/*"
-	},
-	"keywords": [],
+	"repositorys": [
+    {
+      "name": "vue 默认模板",
+      "short": "vue 默认模板",
+      "value": "git@git.haier.net:syn_ydh5/syn_h5/syn_myhome_h5.git",
+      "branch": "release_3.2.0",
+      "directory": "packages/*"
+    },
+    {
+      "name": "vue 模板二",
+      "short": "vue 模板二",
+      "value": "git@*.git"
+    }
+  ],
+	"keywords": ["shang", "cli"],
 	"author": "shang",
 	"license": "ISC",
-	"homepage": "",
+	"homepage": "https://github.com/shang1219178163/shang-cli",
 	"dependencies": {
 		"chalk": "^5.0.1",
 		"commander": "^9.1.0",
