@@ -84,17 +84,6 @@ const initAction = async (name, option) => {
   let questions = [
     {
       type: 'input',
-      message: `请输入项目名称：${name}`,
-      name: 'name',
-      validate(val) {
-        if (val.match(/[^A-Za-z0-9\u4e00-\u9fa5_-]/g)) {
-          return '项目名称包含非法字符'
-        }
-        return true;
-      }
-    },
-    {
-      type: 'input',
       message: '请输入项目关键词（,分割）：',
       name: 'keywords'
     },
