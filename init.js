@@ -19,9 +19,28 @@ const initAction = async (name, option) => {
     })
   const packageObj = JSON.parse(data);
 
-  const remote = option.url ?? packageObj.repository.url; // 远端仓库地址
-  let branch = option.url ? 'master' : packageObj.repository.branch;
+  const answer = await inquirer.prompt([
+    {
+      name: "url",
+      message: "请选择模板:",
+      type: "list",
+      choices: packageObj.repositorys
+    }])
+    console.log('url:', answer.url);
+
+  // 默认仓库
+  let repository = packageObj.repositorys[0];
+  repository = packageObj.repositorys.find(e => e.value === answer.url);
+
+  const remote = option.url ?? repository.value; // 远端仓库地址
+  let branch = option.url ?? repository.branch ?? 'master' ?? 'main';
   const registry = packageObj.registry; // npm 仓库地址
+
+  // 检查控制台是否可运行git
+  if (!remote) {
+    console.log(symbol.error, '仓库地址无效!');
+    shell.exit(1); // 退出
+  }
 
   // 检查控制台是否可运行git
   if (!shell.which('git')) {
@@ -196,6 +215,10 @@ const installPackage = (name, registry = "https://registry.npmjs.org/") => {
     shell.exit(1)
   }
   installSpinner.succeed(chalk.green('依赖安装成功!!!'))
+}
+
+const choicRepo = () => {
+
 }
 
 export default initAction;
