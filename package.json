@@ -16,8 +16,8 @@
     {
       "name": "vue 默认模板",
       "short": "vue 默认模板",
-      "value": "git@git.haier.net:syn_ydh5/syn_h5/syn_myhome_h5.git",
-      "branch": "release_3.2.0",
+      "value": "*",
+      "branch": "*",
       "directory": "packages/*"
     },
     {

@@ -25,8 +25,8 @@ const initAction = async (name, option) => {
       message: "请选择模板:",
       type: "list",
       choices: packageObj.repositorys
-    }])
-    console.log('url:', answer.url);
+    }]);
+  // console.log('url:', answer.url);
 
   // 默认仓库
   let repository = packageObj.repositorys[0];
@@ -71,8 +71,8 @@ const initAction = async (name, option) => {
   }
 
   try {
-      // 下载模板
-    await clone(`direct:${remote}#${branch}`, name, {
+    // 下载模板
+    await clone(`direct:${remote}#${branch}`, name, {clone: true}, {
       clone: true
     });
   } catch (error) {
