@@ -8,10 +8,11 @@ const program = new Command();
 // console.log(program);
 
 program
-  .command('create <name>') // 定义create子命令，<name>为必需参数，可在action的function中接收；如果需要设置为非必需参数，可使用[]
-  .option('-f, --force', '强制覆盖本地同名项目', '-f') // 配置参数
-  .option('--url <items1>', 'git仓库地址', ) // 配置参数
-  .description('使用脚手架创建项目') // 命令描述说明
+  .command('create <name>') // 定义create子命令，<name>为必需参数, [name]为可选参数，可在action的function中接收；
+  .option('-f, --force', '强制覆盖本地同名项目', '-f')
+  .option('--url <value>', 'git仓库地址', )
+  .description('使用脚手架创建项目')
+  // .addHelpText('after', `Example call: $ custom-help`)
   .action((name, options) => {
     const appName = name !== 'create' ? name : process.argv[3];
     // const appName = process.argv.includes('create') ? process.argv[3] : process.argv[2];
